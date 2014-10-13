@@ -22,16 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
-    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
-    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
     
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 100, 100, 100);
+    btn.center =self.view.center;
     [btn setBackgroundColor:[UIColor redColor]];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitle:@"分享" forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
@@ -54,7 +53,7 @@
     
     
     //NSArray *activityItems = @[textToShare];
-    NSArray *activityItems = @[imageToShare];
+    NSArray *activityItems = @[textToShare];
     //NSArray *activityItems = @[textToShare,imageToShare, url];
 
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems

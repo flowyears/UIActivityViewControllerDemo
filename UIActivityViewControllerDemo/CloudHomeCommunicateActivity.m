@@ -28,8 +28,7 @@
 {
      return NSLocalizedString(@"云之家沟通", nil);
 }
-
-- (UIImage *)activityImage
+- (UIImage *)_activityImage
 {
     UIImage *image =[UIImage imageNamed:@"3.png"];
     return image;

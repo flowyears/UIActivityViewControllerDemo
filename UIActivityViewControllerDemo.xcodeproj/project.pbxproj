@@ -17,7 +17,7 @@
 		CC12BFEF19E51DE400702709 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC12BFEE19E51DE300702709 /* 2.jpg */; };
 		CC12BFF219E5234400702709 /* CloudHomeCommunicateActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CC12BFF119E5234400702709 /* CloudHomeCommunicateActivity.m */; };
 		CC12BFF719E526E200702709 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CC12BFF619E526E200702709 /* NSString+URLEncode.m */; };
-		CC12BFF919E53C3F00702709 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CC12BFF819E53C3F00702709 /* 3.png */; };
+		CC12BFF919E53C3F00702709 /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC12BFF819E53C3F00702709 /* 3@2x.png */; };
 		CC3294FA19E616CD00FD790C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3294F919E616CD00FD790C /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		CC12BFF119E5234400702709 /* CloudHomeCommunicateActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudHomeCommunicateActivity.m; sourceTree = "<group>"; };
 		CC12BFF519E526E200702709 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		CC12BFF619E526E200702709 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
-		CC12BFF819E53C3F00702709 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		CC12BFF819E53C3F00702709 /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
 		CC3294F819E616CD00FD790C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		CC3294F919E616CD00FD790C /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 				CC12BFF519E526E200702709 /* NSString+URLEncode.h */,
 				CC12BFF619E526E200702709 /* NSString+URLEncode.m */,
 				CC12BFEE19E51DE300702709 /* 2.jpg */,
-				CC12BFF819E53C3F00702709 /* 3.png */,
+				CC12BFF819E53C3F00702709 /* 3@2x.png */,
 				CC12BFD219E51CD300702709 /* Main.storyboard */,
 				CC12BFD519E51CD300702709 /* Images.xcassets */,
 				CC12BFD719E51CD300702709 /* LaunchScreen.xib */,
@@ -220,7 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC12BFF919E53C3F00702709 /* 3.png in Resources */,
+				CC12BFF919E53C3F00702709 /* 3@2x.png in Resources */,
 				CC12BFD419E51CD300702709 /* Main.storyboard in Resources */,
 				CC12BFD919E51CD300702709 /* LaunchScreen.xib in Resources */,
 				CC12BFEF19E51DE400702709 /* 2.jpg in Resources */,
