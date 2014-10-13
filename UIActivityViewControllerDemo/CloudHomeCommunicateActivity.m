@@ -8,6 +8,7 @@
 
 #import "CloudHomeCommunicateActivity.h"
 #import "NSString+URLEncode.h"
+#import "NSData+Base64.h"
 
 #define appName @"销管家"
 #define appId   @"601602"
@@ -52,12 +53,39 @@
         {
             _url = activityItem;
         }
+        else if ([activityItem isKindOfClass:[NSString class]])
+        {
+            _text = activityItem;
+        }
+        else if([activityItem isKindOfClass:[UIImage class]])
+        {
+            _image = activityItem;
+        }
     }
 }
 - (void)performActivity
 {
+    NSURL *urlToOpen = nil;
+    if (self.url)
+    {
+        urlToOpen = self.url;
+    }
+    else if (self.text)
+    {
+        NSString *urlStr = [[NSString alloc] initWithFormat:@"kdweiboavailable://p?function=share&appId=%@&appName=%@&shareType=1&text=%@",[appId encodeForURL],[appName encodeForURL],[self.text encodeForURL]];
+        urlToOpen = [NSURL URLWithString:urlStr];
+    }
+    else if (self.image)
+    {
+        //NSString *imageData = [[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]] base64EncodedString];
+        NSData *imageData = UIImagePNGRepresentation(self.image);
+        NSString *image = [imageData base64EncodedString];
+        NSString *urlStr = [[NSString alloc] initWithFormat:@"kdweiboavailable://p?function=share&appId=%@&appName=%@&shareType=2&imageData=%@",[appId encodeForURL],[appName encodeForURL],[image encodeForURL]];
+        urlToOpen = [NSURL URLWithString:urlStr];
+    }
+    
+   BOOL completed = [[UIApplication sharedApplication] openURL:urlToOpen];
 
-    BOOL completed = [[UIApplication sharedApplication] openURL:_url];
     [self activityDidFinish:completed];
 }
 @end

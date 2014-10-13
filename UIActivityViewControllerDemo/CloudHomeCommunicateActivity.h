@@ -10,5 +10,6 @@
 
 @interface CloudHomeCommunicateActivity : UIActivity
 @property (nonatomic,strong) NSURL *url;
-@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *text;
+@property (strong, nonatomic) UIImage *image;
 @end

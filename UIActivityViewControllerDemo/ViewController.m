@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CloudHomeCommunicateActivity.h"
 #import "NSString+URLEncode.h"
+#include <objc/runtime.h>
 
 #define appName @"销管家"
 #define appId   @"601602"
@@ -20,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
+    
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 100, 100, 100);
@@ -39,18 +45,18 @@
     CloudHomeCommunicateActivity *cloudHomeCommunicateActivity = [[CloudHomeCommunicateActivity alloc] init];
 
     
-    NSString *textToShare = @"请大家登录《iOS云端与网络通讯》服务网站。";
+    NSString *textToShare = @"GHJGGJHGFHGFJHHJGJHGJHGJHGHGJGJH。";
     
     UIImage *imageToShare = [UIImage imageNamed:@"2.jpg"];
     
     NSString *urlStr = [[NSString alloc] initWithFormat:@"kdweiboavailable://p?function=share&appId=%@&appName=%@&shareType=1&text=%@",[appId encodeForURL],[appName encodeForURL],[textToShare encodeForURL]];
     NSURL *url = [NSURL URLWithString:urlStr];
-    cloudHomeCommunicateActivity.url = url;
     
-    NSURL *urlToShare = [NSURL URLWithString:@"http://www.iosbook3.com"];
     
-    NSArray *activityItems = @[textToShare,imageToShare, url];
-    
+    //NSArray *activityItems = @[textToShare];
+    NSArray *activityItems = @[imageToShare];
+    //NSArray *activityItems = @[textToShare,imageToShare, url];
+
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
                                             
                                                                             applicationActivities:@[cloudHomeCommunicateActivity]];
